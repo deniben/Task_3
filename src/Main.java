@@ -3,6 +3,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,8 +23,10 @@ public class Main {
             char c = input.charAt(i);
             Integer n = map.get(c); // get value through key
             if (n == null) map.put(c, 1); // ckeck if the key have value = null, put value = 1
-            else map.put(c, ++n ); // if the key have value 1, do increase +1;
+            else map.put(c, n+1 ); // if the key have value 1, do increase +1;
         }
-        System.out.println(map);
+        for (Map.Entry<Character, Integer> entry: map.entrySet()){
+            System.out.println(entry.getKey()+": "+entry.getValue());
+        }
     }
 }
